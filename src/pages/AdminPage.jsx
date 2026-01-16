@@ -66,7 +66,11 @@ function AdminPage() {
             <div className="flex items-center gap-4">
               <span className="text-sm text-gray-300">👤 {user?.name}</span>
               <button 
-                onClick={() => logout({ returnTo: window.location.origin })} 
+                onClick={() => logout({ 
+                  logoutParams: { 
+                    returnTo: `${window.location.protocol}//${window.location.host}` 
+                  } 
+                })} 
                 className="px-6 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg font-medium transition-colors"
               >
                 Cerrar Sesión
